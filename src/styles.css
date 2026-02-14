@@ -1,0 +1,75 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  LeptonX Lite Simulation 
+  Variables resembling the actual LeptonX theme for ABP
+*/
+:root {
+  --lx-primary: #5833cc;
+  --lx-primary-hover: #4628a3;
+  --lx-secondary: #ff7519;
+  --lx-sidebar-bg: #101017;
+  --lx-sidebar-text: #aebac9;
+  --lx-sidebar-text-active: #ffffff;
+  --lx-header-bg: #ffffff;
+  --lx-content-bg: #f3f4f6;
+  
+  /* Transitions */
+  --lx-transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Overrides */
+.dark body {
+  --lx-header-bg: #1f2937;
+  --lx-content-bg: #111827;
+}
+
+body {
+  background-color: var(--lx-content-bg);
+  font-family: 'Inter', sans-serif;
+}
+
+/* 
+  LeptonX Custom Components Classes 
+  These map to the structure we built in the components
+*/
+
+/* Sidebar */
+.lx-sidebar {
+  background-color: var(--lx-sidebar-bg);
+  color: var(--lx-sidebar-text);
+}
+
+.lx-nav-item.active, 
+.lx-nav-item:hover {
+  color: var(--lx-sidebar-text-active);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Scrollbar styling for sidebar */
+.lx-sidebar-nav::-webkit-scrollbar {
+  width: 6px;
+}
+.lx-sidebar-nav::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2); 
+  border-radius: 3px;
+}
+
+/* Utilities */
+.lx-card {
+  transition: transform 0.2s;
+}
+
+.lx-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .lx-sidebar-container {
+     display: none;
+  }
+}
